@@ -14,10 +14,10 @@ What is Susie plugin?
 There are several picture viewers that supports Susie plugin. For example:
 
 - [Susie](http://www.digitalpad.co.jp/~takechin/betasue.html#susie32)
-- [Linar](http://www2s.biglobe.ne.jp/~smas/)
+- [Linar](http://hp.vector.co.jp/authors/VA015839/)
 - [picture effecter](http://www.asahi-net.or.jp/~DS8H-WTNB/software/index.html)
 - [stereophotomaker](http://stereo.jpn.org/eng/stphmkr/)
-- [vix](http://www.katch.ne.jp/~k_okada/)
+- [vix](http://www.forest.impress.co.jp/library/software/vix/)
 - [A to B converter](http://www.asahi-net.or.jp/~KH4S-SMZ/spi/abc/index.html)
 - [ACDSee](http://www.acdsee.com/) (commercial)
 
