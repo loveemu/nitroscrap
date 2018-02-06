@@ -1,0 +1,37 @@
+version: 1.0.{build}
+
+image: Visual Studio 2017
+
+environment:
+  matrix:
+  - generator: "Visual Studio 15"
+    config: Release
+    platform: Win32
+    outdir: Release
+    arch: vs2017-x86
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+
+  - generator: "Visual Studio 14"
+    config: Release
+    platform: Win32
+    outdir: Release
+    arch: vs2015-x86
+    APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+
+init:
+  - git config --global core.autocrlf input
+
+build_script:
+  - msbuild src\nitroscrap.sln /t:build /p:Configuration=%config%;Platform="%platform%" /m /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+after_build:
+  - ps: $env:gitrev = git describe --tags
+  - ps: $env:my_version = "$env:gitrev"
+  - set package_name=nitroscrap-%my_version%-%arch%
+  - copy src\%outdir%\axnds.spi .
+  - copy src\%outdir%\ifnscr.spi .
+  - 7z a %package_name%.zip axnds.spi ifnscr.spi README.md LICENSE
+
+artifacts:
+  - path: $(package_name).zip
+    name: $(arch)

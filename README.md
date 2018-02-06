@@ -1,5 +1,6 @@
 nitroscrap
 ==========
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/idxkf3yh34nh5ojn/branch/master?svg=true)](https://ci.appveyor.com/project/loveemu/nitroscrap/branch/master)
 
 nitroscrap is a Susie plugin package for [Nintendo DS File Formats](http://www.romhacking.net/documents/%5B469%5Dnds_formats.htm).
 
