@@ -28,8 +28,8 @@ after_build:
   - ps: $env:gitrev = git describe --tags
   - ps: $env:my_version = "$env:gitrev"
   - set package_name=nitroscrap-%my_version%-%arch%
-  - copy src\%outdir%\axnds.spi .
-  - copy src\%outdir%\ifnscr.spi .
+  - copy "src\%outdir%\axnds.spi" .
+  - copy "src\%outdir%\ifnscr.spi" .
   - 7z a %package_name%.zip axnds.spi ifnscr.spi README.md LICENSE
 
 artifacts:
